@@ -1,0 +1,32 @@
+{
+  "_comment": "InterviewSystem 可选配置覆盖文件（示例）。把本文件复制为同目录下的 settings.json 并按需修改，重启后端生效。所有字段均可省略，省略时使用 config/settings.py 中的默认值。注意：settings.json 可能包含私人路径或 API Key，已被 .gitignore 排除，切勿提交到 Git。",
+
+  "e_root": "D:\\InterviewSystem",
+  "resume_dir": "D:\\InterviewSystem\\Resumes",
+  "data_dir": "D:\\InterviewSystem\\Data",
+  "db_dir": "D:\\InterviewSystem\\Database",
+  "interview_order_xlsx": "D:\\InterviewSystem\\Data\\interview_order.xlsx",
+  "db_path": "D:\\InterviewSystem\\Database\\interview.db",
+
+  "backend_host": "127.0.0.1",
+  "backend_port": 8000,
+  "frontend_host": "127.0.0.1",
+  "frontend_port": 5173,
+
+  "_ai_comment": "ai_provider 可选 mock 或 deepseek。切换为 deepseek 时填下面的 deepseek_api_key（或改用环境变量 DEEPSEEK_API_KEY，优先级更高），然后重启后端。前端无需任何改动。不配置 Key 时系统自动使用 mock，功能完整可用。",
+  "ai_provider": "mock",
+  "deepseek_api_key": "your_api_key_here",
+  "deepseek_base_url": "https://api.deepseek.com",
+  "deepseek_model": "deepseek-chat",
+  "ai_timeout_seconds": 60,
+
+  "_score_comment": "四个评分维度与权重（weight 不必合计为 1，会自动归一化）。前端 InterviewPage.jsx 中的 DIMENSIONS 需与此保持一致。highlight=true 的维度（综合评分=面试官总体印象分）在前端放大显示。",
+  "score_dimensions": [
+    { "key": "character", "label": "性格沟通", "weight": 0.30 },
+    { "key": "ability",   "label": "工作能力", "weight": 0.30 },
+    { "key": "potential", "label": "发展潜力", "weight": 0.20 },
+    { "key": "overall",   "label": "综合评分", "weight": 0.20, "highlight": true }
+  ],
+  "score_min": 0,
+  "score_max": 100
+}
